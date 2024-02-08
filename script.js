@@ -4,13 +4,11 @@ var options = {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
     },
 };
-fetch('http://192.168.1.22/temperatures', options).then((resp) => resp.json()).then(data => {
+fetch('http://192.168.1.22/temperature', options).then((resp) => resp.json()).then(data => {
     if (data.temperature) {
         document.getElementsByClassName('temp')[0].getElementsByTagName('h4')[0].innerHTML = data.temperature + '°c';
     }
-    if (data.humi) {
-        document.getElementsByClassName('humi')[0].getElementsByTagName('h4')[0].innerHTML = data.humi + "% d'humidité";
-    }
+    
 });
 
 
