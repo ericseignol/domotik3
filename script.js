@@ -20,7 +20,7 @@ options = {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
     },
 };
-fetch('http://192.168.1.97/led', options).then((resp) => resp.json()).then(data => {
+fetch('https://192.168.1.97/led', options).then((resp) => resp.json()).then(data => {
     document.getElementsByClassName('gpio')[0].classList.remove("activate");
     document.getElementsByClassName('gpio')[0].classList.remove("disable");
     if (data.currentLed) {
