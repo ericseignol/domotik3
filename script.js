@@ -1,25 +1,32 @@
+var jsonData = JSON.stringify({ Temp: 25, Humidity: 50 });
+
 var options = {
-    method: 'GET',
+    method: 'POST',
     headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+        'Content-Type': 'application/json; charset=utf-8'
     },
+    body: jsonData
 };
-fetch('https://192.168.1.97/dht', options).then((resp) => resp.json()).then(data => {
-    if (data.temperature) {
-        document.getElementsByClassName('temp')[0].getElementsByTagName('h4')[0].innerHTML = data.temperature + '°c';
+fetch('https://github.com/ericseignol/domotik3')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('La requête a échoué');
     }
-    if (data.humi) {
-        document.getElementsByClassName('humi')[0].getElementsByTagName('h4')[0].innerHTML = data.humi + "% d'humidité";
-    }
-});
+    return response.json();
+  })
+  .then(data => {
+    // Traitement des données reçues
+    console.log('Données reçues :', data);
+    // Par exemple, mise à jour de l'affichage HTML avec les données
+    document.getElementById('temperature').innerText = data.Temp + ' °C';
+    document.getElementById('humidity').innerText = data.Humidity + '%';
+  })
+  .catch(error => {
+    console.error('Erreur lors de la récupération des données :', error);
+  });
 
 
-options = {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-    },
-};
+/*
 fetch('https://192.168.1.97/led', options).then((resp) => resp.json()).then(data => {
     document.getElementsByClassName('gpio')[0].classList.remove("activate");
     document.getElementsByClassName('gpio')[0].classList.remove("disable");
@@ -35,12 +42,6 @@ fetch('https://192.168.1.97/led', options).then((resp) => resp.json()).then(data
 });
 
 
-options = {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-    },
-};
 fetch('https://192.168.1.97/volt', options).then((resp) => resp.json()).then(data => {
     if (data.voltage) {
         document.getElementsByClassName('volt')[0].getElementsByTagName('h4')[0].innerHTML = data.voltage + 'v';
@@ -74,4 +75,4 @@ function configLed() {
     }).catch(error => {
         console.log(error);
     });
-}
+}*/
