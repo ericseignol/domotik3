@@ -1,4 +1,4 @@
-var jsonData = JSON.stringify({ Temp: 25, Humidity: 50 });
+var jsonData = JSON.stringify({ Temp, Humidity });
 
 var options = {
     method: 'POST',
