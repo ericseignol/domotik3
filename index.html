@@ -798,6 +798,96 @@
                             </div>
                         </div>
                     </div>
+                    <div class="ddr-page-row ddr-page-row-1 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768" id="ddr-d8bb05e5fa">
+                        <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;" id="ddr-a9cd637e94">
+                            <div id="ddr-515e82a61f" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
+                                <div class="ddr-widget">
+                                    <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;">
+                                        <meta charset="UTF-8">
+                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <title>Machine</title><input type="button" class="btn-toggle" value="Démarrer la machine">
+                                        <p class="status-text">0</p>
+                                        <script>
+                                            <!--
+                                            var btn = document.querySelector(".btn-toggle");
+                                            var txt = document.querySelector(".status-text");
+
+                                            btn.addEventListener("click", updateBtn);
+
+                                            function updateBtn() {
+                                                if (btn.value === "Démarrer la machine") {
+                                                    btn.value = "Arrêter la machine";
+                                                    txt.textContent = "1";
+                                                    // Appelle la fonction pour envoyer la valeur à ThingSpeak
+                                                    sendToThingSpeak(1);
+                                                } else {
+                                                    btn.value = "Démarrer la machine";
+                                                    txt.textContent = "0";
+                                                    // Appelle la fonction pour envoyer la valeur à ThingSpeak
+                                                    sendToThingSpeak(0);
+                                                }
+                                            }
+
+                                            // Fonction pour envoyer la valeur à ThingSpeak
+                                            function sendToThingSpeak(fieldValue) {
+                                                var writeAPIKey = 'D2L7PCJKZKXWAK2C'; // Clé d'écriture de l'API ThingSpeak
+                                                var url = 'https://api.thingspeak.com/update.json?api_key=' + writeAPIKey + '&field5=' + fieldValue;
+                                                console.log('URL de la requête:', url); // Affiche l'URL de la requête dans la console
+                                                // Crée une nouvelle requête XMLHttpRequest
+                                                var xhr = new XMLHttpRequest();
+
+                                                // Configure la requête
+                                                xhr.open('GET', url);
+
+                                                // Gère la réponse de la requête
+                                                xhr.onload = function() {
+                                                    if (xhr.status === 200) {
+                                                        console.log('Données envoyées avec succès à ThingSpeak.');
+                                                    } else {
+                                                        console.error('Erreur lors de l\'envoi des données à ThingSpeak. Statut de la réponse:', xhr.status);
+                                                    }
+                                                };
+
+                                                // Envoie la requête
+                                                xhr.send();
+                                            }
+
+                                            // Fonction pour exécuter la commande toutes les 5 secondes
+                                            function executeEvery5Seconds() {
+                                                // Définit une fonction qui sera appelée toutes les 5 secondes
+                                                function executeCommand() {
+                                                    // Ton code ici
+                                                    var btn = document.querySelector(".btn-toggle");
+                                                    var txt = document.querySelector(".status-text");
+
+                                                    // Vérifie si le bouton est démarré ou arrêté
+                                                    var fieldValue = (btn.value === "Démarrer la machine") ? 1 : 0;
+
+                                                    // Met à jour l'interface utilisateur
+                                                    txt.textContent = fieldValue;
+
+                                                    // Appelle la fonction pour envoyer la valeur à ThingSpeak
+                                                    sendToThingSpeak(fieldValue);
+                                                }
+
+                                                // Exécute la fonction immédiatement lors de l'appel de la fonction executeEvery15Seconds
+                                                executeCommand();
+
+                                                // Planifie l'exécution de la fonction executeCommand toutes les 5 secondes
+                                                setInterval(executeCommand, 5000); // 5 secondes en millisecondes
+                                            }
+
+                                            // Appelle la fonction pour démarrer l'exécution toutes les 15 secondes
+                                            executeEvery5Seconds();
+
+                                            //
+                                            -->
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
