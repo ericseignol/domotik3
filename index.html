@@ -1,749 +1,876 @@
- <style type="text/css" id="">
-     <!--
-     .ddr-header-stick-to-top {
-         position: sticky;
-         top: 0px;
-         overflow: unset;
-         z-index: 1000;
-     }
-
-     #ddr-47248dab17 h1,
-     #ddr-47248dab17 h2,
-     #ddr-47248dab17 h3,
-     #ddr-47248dab17 h4,
-     #ddr-47248dab17 h5,
-     #ddr-47248dab17 h6,
-     #ddr-47248dab17 p,
-     #ddr-47248dab17 span,
-     #ddr-47248dab17 a,
-     #ddr-47248dab17 .ddr-widget,
-     #ddr-47248dab17 .ddr-widget__form-label,
-     #ddr-47248dab17 .ddr-widget__form-submit button,
-     #ddr-47248dab17 .ddr-widget__form-label>div {
-         color: undefined;
-     }
-
-     #ddr-9cfe807283 h1,
-     #ddr-9cfe807283 h2,
-     #ddr-9cfe807283 h3,
-     #ddr-9cfe807283 h4,
-     #ddr-9cfe807283 h5,
-     #ddr-9cfe807283 h6,
-     #ddr-9cfe807283 p,
-     #ddr-9cfe807283 span,
-     #ddr-9cfe807283 a,
-     #ddr-9cfe807283 .ddr-widget,
-     #ddr-9cfe807283 .ddr-widget__form-label,
-     #ddr-9cfe807283 .ddr-widget__form-submit button,
-     #ddr-9cfe807283 .ddr-widget__form-label>div {
-         color: undefined;
-     }
-
-     #ddr-4cd1238ccd h1,
-     #ddr-4cd1238ccd h2,
-     #ddr-4cd1238ccd h3,
-     #ddr-4cd1238ccd h4,
-     #ddr-4cd1238ccd h5,
-     #ddr-4cd1238ccd h6,
-     #ddr-4cd1238ccd p,
-     #ddr-4cd1238ccd span,
-     #ddr-4cd1238ccd a,
-     #ddr-4cd1238ccd .ddr-widget,
-     #ddr-4cd1238ccd .ddr-widget__form-label,
-     #ddr-4cd1238ccd .ddr-widget__form-submit button,
-     #ddr-4cd1238ccd .ddr-widget__form-label>div {
-         color: undefined;
-     }
-
-     .ddr-page-wrapper * {
-         box-sizing: border-box;
-     }
-
-     .ddr-page-wrapper {
-         font-family: sans-serif;
-         margin: 0px;
-         padding: 0px;
-         position: relative;
-     }
-
-     .ddr-page-wrapper .ddr-page-wrapper {
-         min-height: auto;
-     }
-
-     .ddr-page-wrapper .ddr-page {
-         position: relative;
-     }
-
-     .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::after,
-     .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::before,
-     .ddr-page-wrapper .ddr-page>div::after,
-     .ddr-page-wrapper .ddr-page>div::before {
-         clear: both;
-         content: "";
-         display: table;
-     }
-
-     .big-loader-wrapper {
-         align-items: center;
-         background: rgba(211, 210, 210, 0.5);
-         display: flex;
-         height: 150px;
-         justify-content: center;
-         position: relative;
-         width: 100%;
-         z-index: 1;
-     }
-
-     .big-loader-wrapper .big-loader {
-         animation: 1s ease 0s infinite normal none running spin;
-         background-color: rgba(255, 255, 255, 0.1);
-         border-color: rgb(1, 154, 149) rgb(226, 118, 37);
-         border-radius: 50%;
-         border-style: solid;
-         border-width: 3px;
-         display: block;
-         height: 64px;
-         padding-top: 20px;
-         width: 64px;
-     }
-
-     .ddr-page-row,
-     .ddr-page-section-wrapper .ddr-page-section {
-         box-sizing: border-box;
-         position: relative;
-     }
-
-     .ddr-page-row {
-         display: flex;
-         width: 100%;
-     }
-
-     .ddr-page-row.ddr-widget-group-row.ddr-page-row__wrap {
-         flex-wrap: wrap;
-     }
-
-     .ddr-page-row.ddr-widget-group-row.ddr-page-row__wrap .ddr-page-column-and-column-suggestion-wrapper {
-         width: 100% !important;
-     }
-
-     .ddr-page-row__wrap {
-         flex-wrap: wrap;
-     }
-
-     .ddr-page-row__wrap .ddr-page-column__wrap {
-         width: 100% !important;
-     }
-
-     .ddr-page-row__wrap-reverse {
-         flex-wrap: wrap-reverse;
-     }
-
-     .ddr-page-row__wrap-reverse .ddr-page-column__wrap-reverse {
-         width: 100% !important;
-     }
-
-     .ddr-page-column {
-         align-content: flex-start;
-         box-sizing: border-box;
-         display: flex;
-         flex-wrap: wrap;
-         position: relative;
-     }
-
-     @media screen and (max-width: 320px) {
-         .widget-group.wrap--320>div {
-             flex-direction: column !important;
-         }
-
-         .widget-group.wrap--320>div .ddr-page-column {
-             width: 100% !important;
-         }
-     }
-
-     @media screen and (min-width: 321px) and (max-width: 480px) {
-         .widget-group.wrap--480>div {
-             flex-direction: column !important;
-         }
-
-         .widget-group.wrap--480>div .ddr-page-column {
-             width: 100% !important;
-         }
-     }
-
-     @media screen and (min-width: 481px) and (max-width: 768px) {
-         .widget-group.wrap--768>div {
-             flex-direction: column !important;
-         }
-
-         .widget-group.wrap--768>div .ddr-page-column {
-             width: 100% !important;
-         }
-     }
-
-     @media screen and (min-width: 769px) and (max-width: 1024px) {
-         .widget-group.wrap--1024>div {
-             flex-direction: column !important;
-         }
-
-         .widget-group.wrap--1024>div .ddr-page-column {
-             width: 100% !important;
-         }
-     }
-
-     @media screen and (min-width: 1025px) and (max-width: 1280px) {
-         .widget-group.wrap--1280>div {
-             flex-direction: column !important;
-         }
-
-         .widget-group.wrap--1280>div .ddr-page-column {
-             width: 100% !important;
-         }
-     }
-
-     @media only screen and (min-width: 1281px) {
-         .widget-group.wrap--max>div {
-             flex-direction: column !important;
-         }
-
-         .widget-group.wrap--max>div .ddr-page-column {
-             width: 100% !important;
-         }
-     }
-
-     .ddr-page-widget {
-         position: relative;
-         width: 100%;
-     }
-
-     .ddr-page-widget.ddr-page-widget__generic-collection-slider {
-         overflow: visible !important;
-     }
-
-     .dashed-border {
-         outline: rgb(135, 135, 135) dashed 1px;
-     }
-
-     .headline-edit-wrapper {
-         cursor: text;
-     }
-
-     .separator {
-         margin: 33px 0px;
-         position: relative;
-         width: 100%;
-     }
-
-     .separatorIcon {
-         height: 45px;
-         left: 50%;
-         margin-left: -18px;
-         padding: 10px;
-         position: absolute;
-         top: 16px;
-     }
-
-     .ddr-page-widget__navigation {
-         overflow: visible !important;
-     }
-
-     .ddr-page-widget__navigation .ddr-widget {
-         overflow: visible;
-     }
-
-     .ddr-page-widget__navigation .ddr-widget .menu>ul>li {
-         position: relative;
-     }
-
-     .ddr-page-widget__navigation .menu>ul>li {
-         margin-bottom: 0px;
-         position: relative;
-     }
-
-     .ddr-page-widget__navigation .menu li ul {
-         padding-bottom: 0px;
-         position: absolute !important;
-         width: 100%;
-         z-index: 99;
-     }
-
-     .section-slider .ddr-page-section-widget-drop-suggestion-wrapper {
-         padding-bottom: 7px;
-     }
-
-     .ddr-page-widget__sections-slider .toolbox-controls {
-         justify-content: flex-start !important;
-     }
-
-     .section-slider-header-options {
-         align-items: center;
-         display: flex;
-         justify-content: space-between;
-         left: 20px;
-         position: absolute;
-         top: 1px;
-         width: calc(100% - 20px);
-     }
-
-     .section-slider-header-options .fa.fa-copy {
-         margin-right: 7px;
-         position: static;
-         transition: all 0.3s ease 0s;
-         z-index: 100;
-     }
-
-     .section-slider-header-options .fa.fa-copy:hover {
-         color: rgb(239, 83, 80);
-     }
-
-     .slide-options-wrapper {
-         border-bottom: 1px solid rgb(226, 118, 37);
-         position: relative;
-     }
-
-     .slide-options-wrapper .rc-collapse-header {
-         align-items: center;
-         display: flex;
-     }
-
-     .slide-options-wrapper .rc-collapse-content-active {
-         background-color: rgb(23, 23, 23);
-         overflow: visible;
-     }
-
-     .slide-options-wrapper .rc-collapse-content-active .custom-color-picker {
-         left: -35px;
-     }
-
-     .slide-options-wrapper .rc-collapse-content-active .section-slider-delete-icon.slide-delete-icon {
-         align-items: center;
-         background: rgb(239, 83, 80);
-         border-radius: 3px;
-         color: rgb(255, 255, 255);
-     }
-
-     .slide-options-wrapper .rc-collapse-content-active .section-slider-delete-icon.slide-delete-icon i {
-         color: rgb(255, 255, 255) !important;
-     }
-
-     .slide-options-wrapper .rc-collapse-content-active .switch-wrapper .switch {
-         margin-left: -10px;
-     }
-
-     .slide-options-wrapper:last-child {
-         margin-bottom: 24px;
-     }
-
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__sub-tool--drag,
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__sub-tool--duplicate,
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--drag,
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--duplicate,
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--move,
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--settings {
-         background-color: rgb(226, 118, 37);
-     }
-
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--delete {
-         background-color: rgb(72, 72, 72);
-     }
-
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool.ddr-widget-toolbox__tool--delete:hover {
-         background-color: rgb(58, 65, 74);
-     }
-
-     .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool:hover {
-         background-color: rgb(239, 56, 27);
-     }
-
-     .ddr-page-widget-overlay-wrapper:hover .ddr-widget-toolbox--section-slider {
-         border: 2px solid rgb(226, 118, 37) !important;
-     }
-
-     .ddr-widget-toolbox--active.ddr-widget-toolbox--section-slider {
-         border: 2px solid rgb(226, 118, 37);
-     }
-
-     .uploadcare--widget__button {
-         border-radius: 3px;
-         border-style: solid;
-         height: auto;
-         margin-left: 7px;
-         min-width: 0px;
-         padding: 0.4em 1em;
-         width: auto;
-     }
-
-     .ddr-widget {
-         background-color: initial;
-         background-image: none;
-         inset: auto;
-         height: auto;
-         margin: 0px;
-         max-height: none;
-         max-width: none;
-         min-height: 0px;
-         min-width: 0px;
-         padding: 0px;
-         width: auto;
-     }
-
-     .ddr-widget__rich-text {
-         overflow-wrap: break-word;
-         cursor: auto;
-         overflow: hidden;
-         position: relative;
-     }
-
-     .ddr-widget__html {
-         overflow: hidden;
-         position: relative;
-     }
-
-     .ddr-widget__gallery img[src=""] {
-         display: none;
-     }
-
-     @media (min-width: 1281px) {
-         .ddr-page-row__wrap--max {
-             flex-wrap: wrap;
-         }
-
-         .ddr-page-row__wrap--max .ddr-page-column__wrap--max {
-             width: 100% !important;
-         }
-
-         .ddr-page-row__wrap-reverse--max {
-             flex-wrap: wrap-reverse;
-         }
-
-         .ddr-page-row__wrap-reverse--max .ddr-page-column__wrap-reverse--max {
-             width: 100% !important;
-         }
-
-         .ddr-page-column__hide--max,
-         .ddr-page-widget__hide--max {
-             display: none;
-         }
-     }
-
-     @media (max-width: 1280px) and (min-width: 1025px) {
-         .ddr-page-row__wrap--1280 {
-             flex-wrap: wrap;
-         }
-
-         .ddr-page-row__wrap--1280 .ddr-page-column__wrap--1280 {
-             width: 100% !important;
-         }
-
-         .ddr-page-row__wrap-reverse--1280 {
-             flex-wrap: wrap-reverse;
-         }
-
-         .ddr-page-row__wrap-reverse--1280 .ddr-page-column__wrap-reverse--1280 {
-             width: 100% !important;
-         }
-
-         .ddr-page-column__hide--1280,
-         .ddr-page-widget__hide--1280 {
-             display: none;
-         }
-     }
-
-     @media (max-width: 1024px) and (min-width: 769px) {
-         .ddr-page-row__wrap--1024 {
-             flex-wrap: wrap;
-         }
-
-         .ddr-page-row__wrap--1024 .ddr-page-column__wrap--1024 {
-             width: 100% !important;
-         }
-
-         .ddr-page-row__wrap-reverse--1024 {
-             flex-wrap: wrap-reverse;
-         }
-
-         .ddr-page-row__wrap-reverse--1024 .ddr-page-column__wrap-reverse--1024 {
-             width: 100% !important;
-         }
-
-         .ddr-page-column__hide--1024,
-         .ddr-page-widget__hide--1024 {
-             display: none;
-         }
-     }
-
-     @media (max-width: 768px) and (min-width: 481px) {
-         .ddr-page-row__wrap--768 {
-             flex-wrap: wrap;
-         }
-
-         .ddr-page-row__wrap--768 .ddr-page-column__wrap--768 {
-             width: 100% !important;
-         }
-
-         .ddr-page-row__wrap-reverse--768 {
-             flex-wrap: wrap-reverse;
-         }
-
-         .ddr-page-row__wrap-reverse--768 .ddr-page-column__wrap-reverse--768 {
-             width: 100% !important;
-         }
-
-         .ddr-page-column__hide--768,
-         .ddr-page-widget__hide--768 {
-             display: none;
-         }
-     }
-
-     @media (max-width: 480px) and (min-width: 321px) {
-         .ddr-page-row__wrap--480 {
-             flex-wrap: wrap;
-         }
-
-         .ddr-page-row__wrap--480 .ddr-page-column__wrap--480 {
-             width: 100% !important;
-         }
-
-         .ddr-page-row__wrap-reverse--480 {
-             flex-wrap: wrap-reverse;
-         }
-
-         .ddr-page-row__wrap-reverse--480 .ddr-page-column__wrap-reverse--480 {
-             width: 100% !important;
-         }
-
-         .ddr-page-column__hide--480,
-         .ddr-page-widget__hide--480 {
-             display: none;
-         }
-     }
-
-     @media (max-width: 320px) and (min-width: 0px) {
-         .ddr-page-row__wrap--320 {
-             flex-wrap: wrap;
-         }
-
-         .ddr-page-row__wrap--320 .ddr-page-column__wrap--320 {
-             width: 100% !important;
-         }
-
-         .ddr-page-row__wrap-reverse--320 {
-             flex-wrap: wrap-reverse;
-         }
-
-         .ddr-page-row__wrap-reverse--320 .ddr-page-column__wrap-reverse--320 {
-             width: 100% !important;
-         }
-
-         .ddr-page-column__hide--320,
-         .ddr-page-widget__hide--320 {
-             display: none;
-         }
-     }
-
-     //
-     -->
- </style>
- <style type="text/css" id="project-styles">
-     <!--
-     .ddr-widget .ddr-widget__button>a>button,
-     .ddr-widget .ddr-widget__form-text-input .uploadcare-button,
-     .ddr-widget .uploadcare--widget__button,
-     .ddr-widget .ddr-widget__form-submit button {
-         overflow: hidden;
-         cursor: pointer;
-         background-color: #008fa2;
-         box-sizing: border-box;
-         word-break: break-word;
-         transition: all .5s ease;
-         border: none;
-         border-radius: 3px;
-     }
-
-     .ddr-widget .ddr-widget__form-text-input .uploadcare-button {
-         color: white;
-     }
-
-     .editor-wrapper .ddr-page-wrapper .ddr-widget .ddr-widget__rich-text .mce-content-body {
-         line-height: unset;
-     }
-
-     .ddr-widget .ddr-widget__button>a>button,
-     .ddr-widget .ddr-widget__form-text-input .uploadcare-button,
-     .ddr-widget .ddr-widget__form-submit button {
-         display: block;
-     }
-
-     .ddr-widget .ddr-widget__button>a>button span {
-         font-size: 18px;
-     }
-
-     .ddr-widget .ddr-widget__countdown-widget {
-         text-align: center;
-         font-size: 35px;
-     }
-
-     .ddr-widget .ddr-widget__countdown-widget .countdown-label {
-         font-size: 20px;
-     }
-
-     .generic-collection__item-DefaultStyle,
-     .generic-collection__item-Style1,
-     .generic-collection__item-Style2 {
-         font-size: 14px;
-         color: #107e8e;
-         font-weight: 700;
-     }
-
-     .generic-collection__description {
-         color: #343a40;
-     }
-
-     //
-     -->
- </style>
- <script type="text/javascript">
-     <!--
-     (function() {
-         var head = document.getElementsByTagName('head').item(0),
-             url = 'https://app.dragdropr.com/components/dependency-manager.js?version=1.0.9';
-
-         for (var i = 0; i < head.children.length; i++) {
-             if (head.children.item(i).tagName === 'SCRIPT' && head.children.item(i).src.indexOf(url) !== -1) {
-                 return;
-             }
-         }
-
-         var node = document.createElement('script');
-         node.async = 1;
-         node.src = url;
-         head.insertBefore(node, null);
-     })();
-
-     //
-     -->
- </script>
- <div class="ddr-page-wrapper" data-ddr-page-id="72b9d71c-d001-11ee-be71-0242ac140009">
-     <div class="ddr-page">
-         <div id="ddr-47248dab17" class="ddr-page-section-wrapper ddr-page-section-wrapper-0">
-             <div class="ddr-page-section-pre-content ddr-page-section-pre-content-0 ">
-                 <div class="ddr-page-section ddr-page-section-0" style="display: flow-root;">
-                     <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768" id="ddr-f3601eed0d">
-                         <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;" id="ddr-6ab651bf84">
-                             <div style="width: 100%;" id="ddr-8947ac1c9f" class=" ddr-widget widget-group wrap--320 wrap--480 wrap--768">
-                                 <div style="display: flex; padding-left: 0px; flex-direction: row; list-style-position: inside; height: max-content;">
-                                     <div style="height: 150px;"></div>
-                                     <div style="min-height: 150px;" class="empty-section"></div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div id="ddr-9cfe807283" class="ddr-page-section-wrapper ddr-page-section-wrapper-1">
-             <div class="ddr-page-section-pre-content ddr-page-section-pre-content-1 ">
-                 <div class="ddr-page-section ddr-page-section-1" style="display: flow-root;">
-                     <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768" id="ddr-7581c8641d">
-                         <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-6424385514">
-                             <div id="ddr-e9f7a2c1e9" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
-                                 <div class="ddr-widget ">
-                                     <div id="ddr-rich-text-1000" style="margin: 15px;" class="ddr-widget__rich-text">
-                                         <p style="padding-left: 200px;"><strong>Exterieur</strong></p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="ddr-page-column ddr-page-column-1 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-70d88148cb">
-                             <div id="ddr-0f6a0b2e20" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
-                                 <div class="ddr-widget ">
-                                     <div id="ddr-rich-text-1010" style="margin: 15px;" class="ddr-widget__rich-text">
-                                         <p style="padding-left: 200px;"><strong>Interieur</strong></p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="ddr-page-column ddr-page-column-2 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-5fcd820455">
-                             <div id="ddr-ee90c4773f" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
-                                 <div class="ddr-widget ">
-                                     <div id="ddr-rich-text-1020" style="margin: 15px;" class="ddr-widget__rich-text">
-                                         <p style="padding-left: 200px;"><strong>Insuflation</strong></p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="ddr-page-column ddr-page-column-3 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-cd9b5a03d2">
-                             <div id="ddr-ddfa791cf1" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
-                                 <div class="ddr-widget ">
-                                     <div id="ddr-rich-text-1030" style="margin: 15px;" class="ddr-widget__rich-text">
-                                         <p style="padding-left: 200px;"><strong>Extraction</strong></p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div id="ddr-4cd1238ccd" class="ddr-page-section-wrapper ddr-page-section-wrapper-2">
-             <div class="ddr-page-section-pre-content ddr-page-section-pre-content-2 ">
-                 <div class="ddr-page-section ddr-page-section-2" style="display: flow-root;">
-                     <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768" id="ddr-093056228d">
-                         <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-27b43d963f">
-                             <div id="ddr-201c8aaa0b" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
-                                 <div class="ddr-widget">
-                                     <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805319"></iframe></div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="ddr-page-column ddr-page-column-1 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-95ed9d68e8">
-                             <div id="ddr-bf4ea88042" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
-                                 <div class="ddr-widget">
-                                     <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805434"></iframe></div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="ddr-page-column ddr-page-column-2 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-f27313fa4b">
-                             <div id="ddr-5c94ce45c6" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
-                                 <div class="ddr-widget">
-                                     <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805443"></iframe></div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="ddr-page-column ddr-page-column-3 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-85ff51afa4">
-                             <div id="ddr-7210059054" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
-                                 <div class="ddr-widget">
-                                     <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805444"></iframe></div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <script type="text/javascript">
-     <!--
-     var urlMatch = document.location.href.match(/http.+dragdropr.com/);
-     if (urlMatch) {
-         var linksWithRefIDs = document.querySelectorAll('[data-link-ref-id]');
-         linksWithRefIDs.forEach(function(link) {
-             link.addEventListener('click', function(event) {
-                 event.preventDefault();
-                 var linkTag = event.target.closest('a');
-                 var linkTarget = linkTag.hasAttribute('target') ? link.getAttribute('target') : null;
-                 var linkRefId = linkTag.getAttribute('data-link-ref-id');
-                 var linkUrl = urlMatch[0] + '/page/' + linkRefId + '/preview';
-
-                 if (linkTarget && linkTarget == 'new-tab') {
-                     window.open(linkUrl, linkTarget);
-                 } else if (linkTarget !== 'popup') {
-                     window.location.href = linkUrl;
-                 }
-             })
-         });
-     }
-
-     //
-     -->
- </script>
+<script>
+    <!--
+    (function(d, link) {
+        link = d.createElement('link');
+        link.rel = "stylesheet";
+        link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+        d.head.appendChild(link);
+    }(document));
+
+    //
+    -->
+</script>
+<style type="text/css" id="">
+    <!--
+    .ddr-header-stick-to-top {
+        position: sticky;
+        top: 0px;
+        overflow: unset;
+        z-index: 1000;
+    }
+
+    #ddr-4460402a4c h1,
+    #ddr-4460402a4c h2,
+    #ddr-4460402a4c h3,
+    #ddr-4460402a4c h4,
+    #ddr-4460402a4c h5,
+    #ddr-4460402a4c h6,
+    #ddr-4460402a4c p,
+    #ddr-4460402a4c span,
+    #ddr-4460402a4c a,
+    #ddr-4460402a4c .ddr-widget,
+    #ddr-4460402a4c .ddr-widget__form-label,
+    #ddr-4460402a4c .ddr-widget__form-submit button,
+    #ddr-4460402a4c .ddr-widget__form-label>div {
+        color: undefined;
+    }
+
+    #ddr-ebdbd5cf96 h1,
+    #ddr-ebdbd5cf96 h2,
+    #ddr-ebdbd5cf96 h3,
+    #ddr-ebdbd5cf96 h4,
+    #ddr-ebdbd5cf96 h5,
+    #ddr-ebdbd5cf96 h6,
+    #ddr-ebdbd5cf96 p,
+    #ddr-ebdbd5cf96 span,
+    #ddr-ebdbd5cf96 a,
+    #ddr-ebdbd5cf96 .ddr-widget,
+    #ddr-ebdbd5cf96 .ddr-widget__form-label,
+    #ddr-ebdbd5cf96 .ddr-widget__form-submit button,
+    #ddr-ebdbd5cf96 .ddr-widget__form-label>div {
+        color: undefined;
+    }
+
+    #ddr-191c6d1450 h1,
+    #ddr-191c6d1450 h2,
+    #ddr-191c6d1450 h3,
+    #ddr-191c6d1450 h4,
+    #ddr-191c6d1450 h5,
+    #ddr-191c6d1450 h6,
+    #ddr-191c6d1450 p,
+    #ddr-191c6d1450 span,
+    #ddr-191c6d1450 a,
+    #ddr-191c6d1450 .ddr-widget,
+    #ddr-191c6d1450 .ddr-widget__form-label,
+    #ddr-191c6d1450 .ddr-widget__form-submit button,
+    #ddr-191c6d1450 .ddr-widget__form-label>div {
+        color: undefined;
+    }
+
+    .ddr-page-wrapper * {
+        box-sizing: border-box;
+    }
+
+    .ddr-page-wrapper {
+        font-family: sans-serif;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+    }
+
+    .ddr-page-wrapper .ddr-page-wrapper {
+        min-height: auto;
+    }
+
+    .ddr-page-wrapper .ddr-page {
+        position: relative;
+    }
+
+    .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::after,
+    .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::before,
+    .ddr-page-wrapper .ddr-page>div::after,
+    .ddr-page-wrapper .ddr-page>div::before {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .big-loader-wrapper {
+        align-items: center;
+        background: rgba(211, 210, 210, 0.5);
+        display: flex;
+        height: 150px;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .big-loader-wrapper .big-loader {
+        animation: 1s ease 0s infinite normal none running spin;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgb(1, 154, 149) rgb(226, 118, 37);
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 3px;
+        display: block;
+        height: 64px;
+        padding-top: 20px;
+        width: 64px;
+    }
+
+    .ddr-page-row,
+    .ddr-page-section-wrapper .ddr-page-section {
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .ddr-page-row {
+        display: flex;
+        width: 100%;
+    }
+
+    .ddr-page-row.ddr-widget-group-row.ddr-page-row__wrap {
+        flex-wrap: wrap;
+    }
+
+    .ddr-page-row.ddr-widget-group-row.ddr-page-row__wrap .ddr-page-column-and-column-suggestion-wrapper {
+        width: 100% !important;
+    }
+
+    .ddr-page-row__wrap {
+        flex-wrap: wrap;
+    }
+
+    .ddr-page-row__wrap .ddr-page-column__wrap {
+        width: 100% !important;
+    }
+
+    .ddr-page-row__wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    .ddr-page-row__wrap-reverse .ddr-page-column__wrap-reverse {
+        width: 100% !important;
+    }
+
+    .ddr-page-column {
+        align-content: flex-start;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    @media screen and (max-width: 320px) {
+        .widget-group.wrap--320>div {
+            flex-direction: column !important;
+        }
+
+        .widget-group.wrap--320>div .ddr-page-column {
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+        .widget-group.wrap--480>div {
+            flex-direction: column !important;
+        }
+
+        .widget-group.wrap--480>div .ddr-page-column {
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+        .widget-group.wrap--768>div {
+            flex-direction: column !important;
+        }
+
+        .widget-group.wrap--768>div .ddr-page-column {
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .widget-group.wrap--1024>div {
+            flex-direction: column !important;
+        }
+
+        .widget-group.wrap--1024>div .ddr-page-column {
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1280px) {
+        .widget-group.wrap--1280>div {
+            flex-direction: column !important;
+        }
+
+        .widget-group.wrap--1280>div .ddr-page-column {
+            width: 100% !important;
+        }
+    }
+
+    @media only screen and (min-width: 1281px) {
+        .widget-group.wrap--max>div {
+            flex-direction: column !important;
+        }
+
+        .widget-group.wrap--max>div .ddr-page-column {
+            width: 100% !important;
+        }
+    }
+
+    .ddr-page-widget {
+        position: relative;
+        width: 100%;
+    }
+
+    .ddr-page-widget.ddr-page-widget__generic-collection-slider {
+        overflow: visible !important;
+    }
+
+    .dashed-border {
+        outline: rgb(135, 135, 135) dashed 1px;
+    }
+
+    .headline-edit-wrapper {
+        cursor: text;
+    }
+
+    .separator {
+        margin: 33px 0px;
+        position: relative;
+        width: 100%;
+    }
+
+    .separatorIcon {
+        height: 45px;
+        left: 50%;
+        margin-left: -18px;
+        padding: 10px;
+        position: absolute;
+        top: 16px;
+    }
+
+    .ddr-page-widget__navigation {
+        overflow: visible !important;
+    }
+
+    .ddr-page-widget__navigation .ddr-widget {
+        overflow: visible;
+    }
+
+    .ddr-page-widget__navigation .ddr-widget .menu>ul>li {
+        position: relative;
+    }
+
+    .ddr-page-widget__navigation .menu>ul>li {
+        margin-bottom: 0px;
+        position: relative;
+    }
+
+    .ddr-page-widget__navigation .menu li ul {
+        padding-bottom: 0px;
+        position: absolute !important;
+        width: 100%;
+        z-index: 99;
+    }
+
+    .section-slider .ddr-page-section-widget-drop-suggestion-wrapper {
+        padding-bottom: 7px;
+    }
+
+    .ddr-page-widget__sections-slider .toolbox-controls {
+        justify-content: flex-start !important;
+    }
+
+    .section-slider-header-options {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        left: 20px;
+        position: absolute;
+        top: 1px;
+        width: calc(100% - 20px);
+    }
+
+    .section-slider-header-options .fa.fa-copy {
+        margin-right: 7px;
+        position: static;
+        transition: all 0.3s ease 0s;
+        z-index: 100;
+    }
+
+    .section-slider-header-options .fa.fa-copy:hover {
+        color: rgb(239, 83, 80);
+    }
+
+    .slide-options-wrapper {
+        border-bottom: 1px solid rgb(226, 118, 37);
+        position: relative;
+    }
+
+    .slide-options-wrapper .rc-collapse-header {
+        align-items: center;
+        display: flex;
+    }
+
+    .slide-options-wrapper .rc-collapse-content-active {
+        background-color: rgb(23, 23, 23);
+        overflow: visible;
+    }
+
+    .slide-options-wrapper .rc-collapse-content-active .custom-color-picker {
+        left: -35px;
+    }
+
+    .slide-options-wrapper .rc-collapse-content-active .section-slider-delete-icon.slide-delete-icon {
+        align-items: center;
+        background: rgb(239, 83, 80);
+        border-radius: 3px;
+        color: rgb(255, 255, 255);
+    }
+
+    .slide-options-wrapper .rc-collapse-content-active .section-slider-delete-icon.slide-delete-icon i {
+        color: rgb(255, 255, 255) !important;
+    }
+
+    .slide-options-wrapper .rc-collapse-content-active .switch-wrapper .switch {
+        margin-left: -10px;
+    }
+
+    .slide-options-wrapper:last-child {
+        margin-bottom: 24px;
+    }
+
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__sub-tool--drag,
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__sub-tool--duplicate,
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--drag,
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--duplicate,
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--move,
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--settings {
+        background-color: rgb(226, 118, 37);
+    }
+
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool--delete {
+        background-color: rgb(72, 72, 72);
+    }
+
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool.ddr-widget-toolbox__tool--delete:hover {
+        background-color: rgb(58, 65, 74);
+    }
+
+    .ddr-widget-toolbox--section-slider .toolbox-controls .ddr-widget-toolbox__tool:hover {
+        background-color: rgb(239, 56, 27);
+    }
+
+    .ddr-page-widget-overlay-wrapper:hover .ddr-widget-toolbox--section-slider {
+        border: 2px solid rgb(226, 118, 37) !important;
+    }
+
+    .ddr-widget-toolbox--active.ddr-widget-toolbox--section-slider {
+        border: 2px solid rgb(226, 118, 37);
+    }
+
+    .uploadcare--widget__button {
+        border-radius: 3px;
+        border-style: solid;
+        height: auto;
+        margin-left: 7px;
+        min-width: 0px;
+        padding: 0.4em 1em;
+        width: auto;
+    }
+
+    .ddr-widget {
+        background-color: initial;
+        background-image: none;
+        inset: auto;
+        height: auto;
+        margin: 0px;
+        max-height: none;
+        max-width: none;
+        min-height: 0px;
+        min-width: 0px;
+        padding: 0px;
+        width: auto;
+    }
+
+    .ddr-widget__rich-text {
+        overflow-wrap: break-word;
+        cursor: auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .ddr-widget__image {
+        display: flex;
+        height: auto;
+        margin: auto;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .ddr-widget__image a,
+    .ddr-widget__image img {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .ddr-widget__image a,
+    .ddr-widget__image a:active,
+    .ddr-widget__image a:focus,
+    .ddr-widget__image a:hover,
+    .ddr-widget__image a:link,
+    .ddr-widget__image a:visited {
+        border: medium;
+        box-shadow: none;
+        color: inherit;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+    .ddr-widget__html {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .ddr-widget__gallery img[src=""] {
+        display: none;
+    }
+
+    @media (min-width: 1281px) {
+        .ddr-page-row__wrap--max {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--max .ddr-page-column__wrap--max {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--max {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--max .ddr-page-column__wrap-reverse--max {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--max,
+        .ddr-page-widget__hide--max {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1280px) and (min-width: 1025px) {
+        .ddr-page-row__wrap--1280 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--1280 .ddr-page-column__wrap--1280 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--1280 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--1280 .ddr-page-column__wrap-reverse--1280 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--1280,
+        .ddr-page-widget__hide--1280 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .ddr-page-row__wrap--1024 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--1024 .ddr-page-column__wrap--1024 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--1024 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--1024 .ddr-page-column__wrap-reverse--1024 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--1024,
+        .ddr-page-widget__hide--1024 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) and (min-width: 481px) {
+        .ddr-page-row__wrap--768 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--768 .ddr-page-column__wrap--768 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--768 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--768 .ddr-page-column__wrap-reverse--768 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--768,
+        .ddr-page-widget__hide--768 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) and (min-width: 321px) {
+        .ddr-page-row__wrap--480 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--480 .ddr-page-column__wrap--480 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--480 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--480 .ddr-page-column__wrap-reverse--480 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--480,
+        .ddr-page-widget__hide--480 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 320px) and (min-width: 0px) {
+        .ddr-page-row__wrap--320 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--320 .ddr-page-column__wrap--320 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--320 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--320 .ddr-page-column__wrap-reverse--320 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--320,
+        .ddr-page-widget__hide--320 {
+            display: none;
+        }
+    }
+
+    //
+    -->
+</style>
+<style type="text/css" id="project-styles">
+    <!--
+    .ddr-widget .ddr-widget__button>a>button,
+    .ddr-widget .ddr-widget__form-text-input .uploadcare-button,
+    .ddr-widget .uploadcare--widget__button,
+    .ddr-widget .ddr-widget__form-submit button {
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #008fa2;
+        box-sizing: border-box;
+        word-break: break-word;
+        transition: all .5s ease;
+        border: none;
+        border-radius: 3px;
+    }
+
+    .ddr-widget .ddr-widget__form-text-input .uploadcare-button {
+        color: white;
+    }
+
+    .editor-wrapper .ddr-page-wrapper .ddr-widget .ddr-widget__rich-text .mce-content-body {
+        line-height: unset;
+    }
+
+    .ddr-widget .ddr-widget__button>a>button,
+    .ddr-widget .ddr-widget__form-text-input .uploadcare-button,
+    .ddr-widget .ddr-widget__form-submit button {
+        display: block;
+    }
+
+    .ddr-widget .ddr-widget__button>a>button span {
+        font-size: 18px;
+    }
+
+    .ddr-widget .ddr-widget__countdown-widget {
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .ddr-widget .ddr-widget__countdown-widget .countdown-label {
+        font-size: 20px;
+    }
+
+    .generic-collection__item-DefaultStyle,
+    .generic-collection__item-Style1,
+    .generic-collection__item-Style2 {
+        font-size: 14px;
+        color: #107e8e;
+        font-weight: 700;
+    }
+
+    .generic-collection__description {
+        color: #343a40;
+    }
+
+    //
+    -->
+</style>
+<script class="dd-uploadcare-script">
+    <!--
+    if (!ddUploadCareScript) {
+        var ddUploadCareScript = document.currentScript;
+
+        (function(src, cb) {
+            var s = document.createElement('script');
+            s.setAttribute('src', src);
+            s.onload = cb;
+            (document.head || document.body).appendChild(s);
+        })('https://ucarecdn.com/libs/blinkloader/3.x/blinkloader.min.js', function() {
+            window.Blinkloader.optimize({
+                pubkey: "7e7cb2191e43d9e6ba19",
+                fadeIn: true
+            });
+        });
+    }
+
+    //
+    -->
+</script>
+<script type="text/javascript">
+    <!--
+    (function() {
+        var head = document.getElementsByTagName('head').item(0),
+            url = 'https://app.dragdropr.com/components/dependency-manager.js?version=1.0.9';
+
+        for (var i = 0; i < head.children.length; i++) {
+            if (head.children.item(i).tagName === 'SCRIPT' && head.children.item(i).src.indexOf(url) !== -1) {
+                return;
+            }
+        }
+
+        var node = document.createElement('script');
+        node.async = 1;
+        node.src = url;
+        head.insertBefore(node, null);
+    })();
+
+    //
+    -->
+</script>
+<div class="ddr-page-wrapper" data-ddr-page-id="97d413f8-d003-11ee-bef4-0242ac140009">
+    <div class="ddr-page">
+        <div id="ddr-4460402a4c" class="ddr-page-section-wrapper ddr-page-section-wrapper-0">
+            <div class="ddr-page-section-pre-content ddr-page-section-pre-content-0 " style="max-width: 1200px; margin: auto;">
+                <div class="ddr-page-section ddr-page-section-0" style="display: flow-root;">
+                    <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320" id="ddr-0de2f4d9ed">
+                        <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 " style="align-content: center; width: 50%;" id="ddr-edefb08bf7">
+                            <div id="ddr-b31e033e66" class="ddr-page-widget ddr-page-widget__image ddr-page-widget-0 ">
+                                <div class="ddr-widget ">
+                                    <div class="ddr-widget__image" style="justify-content: flex-start; margin: 20px 30px; overflow: hidden;"><a target="_self" style="width: 36px; height: auto;"><img src="https://dragdropr-images-prod.b-cdn.net/1ed25e30-cffc-11ee-a977-0242ac140009/2024-02-20-16-13-19/IMG_20230731_211054.jpg" title="Domotik 3" style="height: auto; width: 36px;"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-1 ddr-page-column__wrap--320 " style="align-content: center; width: 50%;" id="ddr-7708f48d0c">
+                            <div style="width: 100%;" id="ddr-f5d889840a" class=" ddr-widget widget-group wrap--320 wrap--480 wrap--768">
+                                <div style="display: flex; padding-left: 0px; flex-direction: row; list-style-position: inside; height: max-content;">
+                                    <div class="ddr-page-column ddr-page-column-0 undefined " style="align-content: center; width: 100%;" id="ddr-902fb28806">
+                                        <div id="ddr-2973396fe2" class="ddr-page-widget ddr-page-widget__link-group ddr-page-widget-0 ">
+                                            <ul class="ddr-widget" id="ddr-2973396fe2" style="margin: 0px 30px; padding-bottom: 15px; padding-top: 15px; display: flex; flex-direction: row; list-style-position: inside; list-style-type: none; justify-content: flex-end;">
+                                                <li style="margin: 0px; padding-left: 10px; background-color: inherit;"><a target="_self" style="text-decoration: none; font-style: normal; font-weight: bold; font-size: 11px;" href="">
+                                                        <div style="display: inline-block;" class="link-icon"><i style="margin: 0px 5px;" class="fa fa-search"></i></div>
+                                                    </a></li>
+                                                <li style="margin: 0px; padding-left: 10px; background-color: inherit;"><a target="_self" style="text-decoration: none; font-style: normal; font-weight: bold; font-size: 11px;" href="#">SIGN UP</a></li>
+                                                <li style="margin: 0px; padding-left: 10px; background-color: inherit;"><a target="_self" style="text-decoration: none; font-style: normal; font-weight: bold; font-size: 11px;" href="">SIGN IN</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ddr-ebdbd5cf96" class="ddr-page-section-wrapper ddr-page-section-wrapper-1">
+            <div class="ddr-page-section-pre-content ddr-page-section-pre-content-1 ">
+                <div class="ddr-page-section ddr-page-section-1" style="display: flow-root;">
+                    <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768" id="ddr-7d5393606c">
+                        <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-1229bd889e">
+                            <div id="ddr-bed9518099" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
+                                <div class="ddr-widget ">
+                                    <div id="ddr-rich-text-1000" style="margin: 15px;" class="ddr-widget__rich-text">
+                                        <p style="padding-left: 160px;"><strong>Exterieur</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-1 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-a624320765">
+                            <div id="ddr-6ef6e306f7" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
+                                <div class="ddr-widget ">
+                                    <div id="ddr-rich-text-1010" style="margin: 15px;" class="ddr-widget__rich-text">
+                                        <p style="padding-left: 160px;"><strong>Interieur</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-2 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-09a21ee924">
+                            <div id="ddr-4e38b8e1a5" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
+                                <div class="ddr-widget ">
+                                    <div id="ddr-rich-text-1020" style="margin: 15px;" class="ddr-widget__rich-text">
+                                        <p style="padding-left: 120px;"><strong>Insuflation</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-3 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-87c4600bd8">
+                            <div id="ddr-54c56bfee7" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-0 ">
+                                <div class="ddr-widget ">
+                                    <div id="ddr-rich-text-1030" style="margin: 15px;" class="ddr-widget__rich-text">
+                                        <p style="padding-left: 160px;"><strong>Extraction</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ddr-191c6d1450" class="ddr-page-section-wrapper ddr-page-section-wrapper-2">
+            <div class="ddr-page-section-pre-content ddr-page-section-pre-content-2 ">
+                <div class="ddr-page-section ddr-page-section-2" style="display: flow-root;">
+                    <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768" id="ddr-cd87717c37">
+                        <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-6acddc6e6b">
+                            <div id="ddr-dd2d1e95d5" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
+                                <div class="ddr-widget">
+                                    <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805319"></iframe></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-1 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-8d9536d057">
+                            <div id="ddr-11d9e11b06" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
+                                <div class="ddr-widget">
+                                    <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805434"></iframe></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-2 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-e3479d9606">
+                            <div id="ddr-685f510d8d" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
+                                <div class="ddr-widget">
+                                    <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805443"></iframe></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-3 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 25%;" id="ddr-fcfcf86c79">
+                            <div id="ddr-d4842af45c" class="ddr-page-widget ddr-page-widget__html ddr-page-widget-0 ">
+                                <div class="ddr-widget">
+                                    <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;"><iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/widgets/805444"></iframe></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    <!--
+    (function() {
+        // STEPS
+        // generator step function
+        function popUpAction(el, contextData) {
+            let popUpcontextData = JSON.parse(el.getAttribute("datapopup"));
+
+            el.removeAttribute("href");
+            el.removeAttribute("target");
+
+            el.addEventListener('click', function(event) {
+                event.preventDefault;
+                window.open(contextData.href, "", "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=0,height=0,left=-1000,top=-1000")
+            })
+            console.log(el)
+        }
+
+        // MAIN
+        //fetch all anchors with specific marker "datapopup"
+
+        var allAnchors = document.body.getElementsByTagName("a");
+
+        var popupAnchors = []
+        for (let i = 0; i < allAnchors.length; i++) {
+            let currentAnchor = allAnchors[i];
+            if (currentAnchor.hasAttribute("datapopup")) {
+                popupAnchors.push(currentAnchor)
+            }
+        }
+
+        //Aadd functionality to expected elements
+        for (let i = 0; i < popupAnchors.length; i++) {
+            console.log("Bla");
+            let currentAnchor = popupAnchors[i];
+
+            const contextData = JSON.parse(currentAnchor.getAttribute("datapopup"));
+            popUpAction(currentAnchor, contextData)
+        }
+
+
+    })()
+
+    //
+    -->
+</script>
+<script type="text/javascript">
+    <!--
+    var urlMatch = document.location.href.match(/http.+dragdropr.com/);
+    if (urlMatch) {
+        var linksWithRefIDs = document.querySelectorAll('[data-link-ref-id]');
+        linksWithRefIDs.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var linkTag = event.target.closest('a');
+                var linkTarget = linkTag.hasAttribute('target') ? link.getAttribute('target') : null;
+                var linkRefId = linkTag.getAttribute('data-link-ref-id');
+                var linkUrl = urlMatch[0] + '/page/' + linkRefId + '/preview';
+
+                if (linkTarget && linkTarget == 'new-tab') {
+                    window.open(linkUrl, linkTarget);
+                } else if (linkTarget !== 'popup') {
+                    window.location.href = linkUrl;
+                }
+            })
+        });
+    }
+
+    //
+    -->
+</script>
