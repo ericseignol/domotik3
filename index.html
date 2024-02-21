@@ -815,7 +815,33 @@
                                      <div class="ddr-widget__html" style="margin: 30px; padding-bottom: 15px;">
                                          <meta charset="UTF-8">
                                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                         <title>Bypass</title><input type="button" class="btn-toggle" value="Démarrer la machine">
+                                         <title>Bypass</title>
+                                         <style>
+                                             <!--
+                                             .btn-toggle {
+                                                 padding: 10px 20px;
+                                                 /* Ajoutez ou modifiez cette ligne pour changer la taille du bouton */
+                                                 font-size: 16px;
+                                                 /* Modifiez la taille de la police si nécessaire */
+                                                 border-radius: 5px;
+                                                 /* Ajoutez des coins arrondis pour le bouton */
+                                                 transition: background-color 0.3s ease;
+                                                 /* Ajoute une transition pour le changement de couleur */
+                                             }
+
+                                             .btn-toggle.active {
+                                                 background-color: green;
+                                                 /* Couleur verte pour le bouton lorsque la machine est démarrée */
+                                             }
+
+                                             .btn-toggle:not(.active) {
+                                                 background-color: red;
+                                                 /* Couleur rouge pour le bouton lorsque la machine est arrêtée */
+                                             }
+
+                                             //
+                                             -->
+                                         </style><input type="button" class="btn-toggle" value="Démarrer la machine">
                                          <p class="status-text">0</p>
                                          <script>
                                              <!--
@@ -825,16 +851,18 @@
                                              btn.addEventListener("click", updateBtn);
 
                                              function updateBtn() {
-                                                 if (btn.value === "Démarrer la machine") {
-                                                     btn.value = "Arrêter la machine";
-                                                     txt.textContent = "1";
-                                                     // Appelle la fonction pour envoyer la valeur à ThingSpeak
-                                                     sendToThingSpeak(1);
-                                                 } else {
+                                                 if (btn.classList.contains("active")) {
+                                                     btn.classList.remove("active");
                                                      btn.value = "Démarrer la machine";
                                                      txt.textContent = "0";
                                                      // Appelle la fonction pour envoyer la valeur à ThingSpeak
                                                      sendToThingSpeak(0);
+                                                 } else {
+                                                     btn.classList.add("active");
+                                                     btn.value = "Arrêter la machine";
+                                                     txt.textContent = "1";
+                                                     // Appelle la fonction pour envoyer la valeur à ThingSpeak
+                                                     sendToThingSpeak(1);
                                                  }
                                              }
 
@@ -871,7 +899,7 @@
                                                      var txt = document.querySelector(".status-text");
 
                                                      // Vérifie si le bouton est démarré ou arrêté
-                                                     var fieldValue = (btn.value === "Démarrer la machine") ? 1 : 0;
+                                                     var fieldValue = (btn.classList.contains("active")) ? 1 : 0;
 
                                                      // Met à jour l'interface utilisateur
                                                      txt.textContent = fieldValue;
