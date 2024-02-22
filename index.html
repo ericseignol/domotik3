@@ -4,7 +4,10 @@
    <script type="text/javascript">
       google.charts.load('current', {'packages':['gauge']});
       google.charts.setOnLoadCallback(drawChart);
-
+	  // ThingSpeak variables
+      var channel_id = 2344475;
+      var api_key = 'WK1HKJMH6AFPC2F2';
+     
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
@@ -27,24 +30,38 @@
         var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
         chart.draw(data, options);
+		loadData();
+        // Load new data every 15 seconds
+        setInterval(loadData, 15000);
 
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
+    // Load the data from ThingSpeak
+      function loadData() {
+        $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(data) {
+          var p1 = data.field1;
+		  var p2= data.field2;
+		  var p3= data.field3;
+		  var p4= data.field4;
+          if (p1) {
+            p1 = Math.round((p1 / max_gauge_value) * 100);
+            displayData(p1);
+          }
+		  if (p2) {
+            p2 = Math.round((p2 / max_gauge_value) * 100);
+            displayData(p2);
+          }
+		  if (p3) {
+            p3 = Math.round((p3 / max_gauge_value) * 100);
+            displayData(p3);
+          }
+		  if (p4) {
+            p4 = Math.round((p4 / max_gauge_value) * 100);
+            displayData(p4);
+          }
+        });
       }
     </script>
   </head>
   <body>
-    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+    <div id="chart_div" style="width: 800px; height: 240px;"></div>
   </body>
 </html>
-
