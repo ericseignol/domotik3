@@ -84,6 +84,9 @@
     }
     // Update the value for the corresponding row
     data.setValue(rowIndex, 1, point);
+		// Redessiner le graphique pour refléter les changements
+    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+    chart.draw(data, options);
    }
     </script>
   </head>
