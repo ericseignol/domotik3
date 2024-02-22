@@ -49,19 +49,19 @@ var chart = new google.visualization.Gauge(document.getElementById('chart_div'))
 	      console.log('Valeurs récupérées : p1 =', p1, ', p2 =', p2, ', p3 =', p3, ', p4 =', p4);
 
           if (p1) {
-            p1 = Math.round((p1 / max_gauge_value) * 100);
+             p1 = Math.round(parseFloat(p1)); // Assurez-vous que p1 est bien un nombre
             displayData('Exterieur', p1, options);
         }
-        if (p2) {
-            p2 = Math.round((p2 / max_gauge_value) * 100);
+        if (p2 != null) {
+            p2 = Math.round(parseFloat(p2)); // Assurez-vous que p2 est bien un nombre
             displayData('Interieur', p2, options);
         }
-        if (p3) {
-            p3 = Math.round((p3 / max_gauge_value) * 100);
+        if (p3 != null) {
+            p3 = Math.round(parseFloat(p3)); // Assurez-vous que p3 est bien un nombre
             displayData('Insufl.', p3, options);
         }
-        if (p4) {
-            p4 = Math.round((p4 / max_gauge_value) * 100);
+        if (p4 != null) {
+            p4 = Math.round(parseFloat(p4)); // Assurez-vous que p4 est bien un nombre
             displayData('Extract.', p4, options);
           }
         });
