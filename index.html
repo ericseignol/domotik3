@@ -1,5 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
   <head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOMOTIC 3</title>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    <script type="text/javascript">
@@ -109,6 +113,81 @@ if (p4 != null) {
 <div id="chart-container" style="position: relative;">
   <iframe width="450" height="260" style="position: absolute; top: 440; left: 500; border: 0px solid #cccccc;" src="https://thingspeak.com/channels/2344475/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=5000&type=line&update=15"></iframe>
 </div>
+	  
+<input type="button" class="btn-toggle" value="Démarrer la machine">
+  <p class="status-text">0</p>
+	  
+	  <script>
+    var btn = document.querySelector(".btn-toggle");
+    var txt = document.querySelector(".status-text");
 
+    btn.addEventListener("click", updateBtn);
+
+    function updateBtn() {
+      if (btn.value === "Démarrer la machine") {
+        btn.value = "Arrêter la machine";
+        txt.textContent = "0";
+        // Appelle la fonction pour envoyer la valeur à ThingSpeak
+        sendToThingSpeak(0);
+      } else {
+        btn.value = "Démarrer la machine";
+        txt.textContent = "1";
+        // Appelle la fonction pour envoyer la valeur à ThingSpeak
+        sendToThingSpeak(1);
+      }
+    }
+
+    // Fonction pour envoyer la valeur à ThingSpeak
+    function sendToThingSpeak(fieldValue) {
+      var writeAPIKey = 'D2L7PCJKZKXWAK2C'; // Clé d'écriture de l'API ThingSpeak
+      var url = 'https://api.thingspeak.com/update.json?api_key=' + writeAPIKey + '&field5=' + fieldValue;
+      console.log('URL de la requête:', url); // Affiche l'URL de la requête dans la console
+      // Crée une nouvelle requête XMLHttpRequest
+      var xhr = new XMLHttpRequest();
+
+      // Configure la requête
+      xhr.open('GET', url);
+
+      // Gère la réponse de la requête
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          console.log('Données envoyées avec succès à ThingSpeak.');
+        } else {
+          console.error('Erreur lors de l\'envoi des données à ThingSpeak. Statut de la réponse:', xhr.status);
+        }
+      };
+
+      // Envoie la requête
+      xhr.send();
+    }
+
+    // Fonction pour exécuter la commande toutes les 5 secondes
+    function executeEvery5Seconds() {
+      // Définit une fonction qui sera appelée toutes les 5 secondes
+      function executeCommand() {
+        // Ton code ici
+        var btn = document.querySelector(".btn-toggle");
+        var txt = document.querySelector(".status-text");
+
+        // Vérifie si le bouton est démarré ou arrêté
+        var fieldValue = (btn.value === "Démarrer la machine") ? 1 : 0;
+
+        // Met à jour l'interface utilisateur
+        txt.textContent = fieldValue;
+
+        // Appelle la fonction pour envoyer la valeur à ThingSpeak
+        sendToThingSpeak(fieldValue);
+      }
+
+      // Exécute la fonction immédiatement lors de l'appel de la fonction executeEvery15Seconds
+      executeCommand();
+
+      // Planifie l'exécution de la fonction executeCommand toutes les 5 secondes
+      setInterval(executeCommand, 5000); // 5 secondes en millisecondes
+    }
+
+    // Appelle la fonction pour démarrer l'exécution toutes les 15 secondes
+    executeEvery5Seconds();
+  </script>
   </body>
 </html>
