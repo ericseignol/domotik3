@@ -10,15 +10,18 @@
       var api_key = 'WK1HKJMH6AFPC2F2';
       var max_gauge_value = 50;
       // global variables
-      var data;   
+      var data;  
+	   
       function drawChart() {
 
  data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Exterieur', 12],
-          ['Interieur', 22],
-          ['Insufl.', 21],
-          ['Extract.', 20]
+          data.addColumn('string', 'Label');
+		data.addColumn('number', 'Value');
+		data.addRows([
+		['Exterieur', 0], // Valeur initiale à 0 ou à un autre nombre par défaut
+		['Interieur', 0],
+		['Insufl.', 0],
+		['Extract.', 0]
         ]);
 
         var options = {
