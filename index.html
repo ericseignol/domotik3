@@ -95,10 +95,7 @@
         return;
     }
     data.setValue(rowIndex, 1, parseFloat(point).toFixed(2));
-    var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
-    var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
-    chart1.draw(data, options);
-    chart2.draw(data, options);
+    chart.draw(data, options);
   }
 </script>
 </head>
