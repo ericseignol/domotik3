@@ -35,18 +35,13 @@
       min: -10
     };
 
-    var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
-    var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
-    var chart3 = new google.visualization.Gauge(document.getElementById('chart_div3'));
-    var chart4 = new google.visualization.Gauge(document.getElementById('chart_div4'));
-    
+    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+     
     loadData(); // Chargez les données avant de dessiner les graphiques
 
-    // Dessinez chaque jauge individuellement
-    chart1.draw(data, options);
-    chart2.draw(data, options);
-    chart3.draw(data, options);
-    chart4.draw(data, options);
+
+    chart.draw(data, options);
+   
 
     // Load new data every 15 seconds
     setInterval(loadData, 15000);
