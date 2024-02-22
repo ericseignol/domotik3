@@ -49,23 +49,23 @@ var chart = new google.visualization.Gauge(document.getElementById('chart_div'))
 
           if (p1) {
             p1 = Math.round((p1 / max_gauge_value) * 100);
-            displayData('Exterieur', p1);
+            displayData('Exterieur', p1, options);
         }
         if (p2) {
             p2 = Math.round((p2 / max_gauge_value) * 100);
-            displayData('Interieur', p2);
+            displayData('Interieur', p2, options);
         }
         if (p3) {
             p3 = Math.round((p3 / max_gauge_value) * 100);
-            displayData('Insufl.', p3);
+            displayData('Insufl.', p3, options);
         }
         if (p4) {
             p4 = Math.round((p4 / max_gauge_value) * 100);
-            displayData('Extract.', p4);
+            displayData('Extract.', p4, options);
           }
         });
       }
-	function displayData(label, point) {
+	function displayData(label, point, options) {
     // Find the row index based on the label
     var rowIndex;
     switch(label) {
