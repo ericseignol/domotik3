@@ -14,10 +14,8 @@
 	   
       function drawChart() {
 
- data = new google.visualization.arrayToDataTable()
-          data.addColumn('string', 'Label');
-		data.addColumn('number', 'Value');
-		data.addRows([
+ data = new google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
 		['Exterieur', 0], // Valeur initiale à 0 ou à un autre nombre par défaut
 		['Interieur', 0],
 		['Insufl.', 0],
