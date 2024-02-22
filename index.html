@@ -43,25 +43,48 @@
 		  var p4= data.field4;
           if (p1) {
             p1 = Math.round((p1 / max_gauge_value) * 100);
-            displayData(p1);
-          }
-		  if (p2) {
+            displayData('Exterieur', p1);
+        }
+        if (p2) {
             p2 = Math.round((p2 / max_gauge_value) * 100);
-            displayData(p2);
-          }
-		  if (p3) {
+            displayData('Interieur', p2);
+        }
+        if (p3) {
             p3 = Math.round((p3 / max_gauge_value) * 100);
-            displayData(p3);
-          }
-		  if (p4) {
+            displayData('Insufl.', p3);
+        }
+        if (p4) {
             p4 = Math.round((p4 / max_gauge_value) * 100);
-            displayData(p4);
+            displayData('Extract.', p4);
           }
         });
       }
+	function displayData(label, point) {
+    // Find the row index based on the label
+    var rowIndex;
+    switch(label) {
+        case 'Exterieur':
+            rowIndex = 0;
+            break;
+        case 'Interieur':
+            rowIndex = 1;
+            break;
+        case 'Insufl.':
+            rowIndex = 2;
+            break;
+        case 'Extract.':
+            rowIndex = 3;
+            break;
+        default:
+            // Handle unexpected labels
+            return;
+    }
+    // Update the value for the corresponding row
+    data.setValue(rowIndex, 1, point);
+}
     </script>
   </head>
   <body>
-    <div id="chart_div" style="width: 800px; height: 240px;"></div>
+    <div id="chart_div" style="width: 400px; height: 120px;"></div>
   </body>
 </html>
