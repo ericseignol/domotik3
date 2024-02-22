@@ -29,7 +29,7 @@
           max: 50,
           min: -10
         };
-
+var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
         loadData();
         chart.draw(data, options);
 		
