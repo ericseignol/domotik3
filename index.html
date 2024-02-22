@@ -33,7 +33,7 @@
 		loadData();
         // Load new data every 15 seconds
         setInterval(loadData, 15000);
-
+      }
     // Load the data from ThingSpeak
       function loadData() {
         $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(data) {
