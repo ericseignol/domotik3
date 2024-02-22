@@ -10,7 +10,8 @@
       var api_key = 'WK1HKJMH6AFPC2F2';
       var max_gauge_value = 50;
       // global variables
-      var data;  
+      var data;
+      var options;
 	   
       function drawChart() {
 
@@ -22,7 +23,7 @@
 		['Extract.', 0]
         ]);
 
-        var options = {
+ options = {
           width: 800, height: 240,
           redFrom: 35, redTo: 50,
           yellowFrom: 25, yellowTo: 35,
