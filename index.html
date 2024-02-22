@@ -31,9 +31,9 @@
         };
 
         var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
+	loadData();
         chart.draw(data, options);
-		loadData();
+		
         // Load new data every 15 seconds
         setInterval(loadData, 15000);
       }
@@ -84,7 +84,7 @@
     }
     // Update the value for the corresponding row
     data.setValue(rowIndex, 1, point);
-}
+   }
     </script>
   </head>
   <body>
