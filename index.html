@@ -30,8 +30,7 @@
           min: -10
         };
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-	loadData();
+        loadData();
         chart.draw(data, options);
 		
         // Load new data every 15 seconds
