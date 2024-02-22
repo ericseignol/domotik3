@@ -10,7 +10,7 @@
       var api_key = 'WK1HKJMH6AFPC2F2';
       var max_gauge_value = 50;
       // global variables
-      var chart, charts, data;   
+      var data;   
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
@@ -39,11 +39,11 @@
       }
     // Load the data from ThingSpeak
       function loadData() {
-        $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(data) {
-          var p1 = data.field1;
-		  var p2= data.field2;
-		  var p3= data.field3;
-		  var p4= data.field4;
+      $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(responseData) {
+          var p1 = responseData.field1;
+          var p2 = responseData.field2;
+          var p3 = responseData.field3;
+          var p4 = responseData.field4;
           if (p1) {
             p1 = Math.round((p1 / max_gauge_value) * 100);
             displayData('Exterieur', p1);
