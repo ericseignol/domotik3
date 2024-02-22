@@ -40,10 +40,13 @@ var chart = new google.visualization.Gauge(document.getElementById('chart_div'))
     // Load the data from ThingSpeak
       function loadData() {
       $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(responseData) {
+	      console.log('Données renvoyées par l\'API Thingspeak :', responseData);
           var p1 = responseData.field1;
           var p2 = responseData.field2;
           var p3 = responseData.field3;
           var p4 = responseData.field4;
+	      console.log('Valeurs récupérées : p1 =', p1, ', p2 =', p2, ', p3 =', p3, ', p4 =', p4);
+
           if (p1) {
             p1 = Math.round((p1 / max_gauge_value) * 100);
             displayData('Exterieur', p1);
