@@ -10,16 +10,7 @@
 <script type="text/javascript">
   google.charts.load('current', {'packages':['gauge']});
   google.charts.setOnLoadCallback(drawChart);
-  google.charts.setOnLoadCallback(function () {
-    // Si la bibliothèque Google Charts est chargée avec succès
-    console.log('Google Charts chargé avec succès.');
-});
 
-// Gestionnaire d'erreur en cas d'échec du chargement de la bibliothèque
-google.charts.setOnLoadCallback(function () {
-    // En cas d'échec du chargement de la bibliothèque Google Charts
-    console.error('Échec du chargement de Google Charts.');
-});
   // ThingSpeak variables
   var channel_id = 2344475;
   var api_key = 'F6IGDPHDXUIXJGI6';
@@ -47,8 +38,9 @@ google.charts.setOnLoadCallback(function () {
     };
 
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-    chart.draw(data, options);
+    
     loadData(); // Chargez les données avant de dessiner les graphiques
+    chart.draw(data, options);
     // Load new data every 20 seconds
     setInterval(loadData, 20000);
   }
