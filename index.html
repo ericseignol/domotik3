@@ -37,13 +37,7 @@
     };
 
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-     
     loadData(); // Chargez les données avant de dessiner les graphiques
-
-
-    chart.draw(data, options);
-   
-
     // Load new data every 15 seconds
     setInterval(loadData, 15000);
   }
