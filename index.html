@@ -19,7 +19,7 @@
   var options;
 
   function drawChart() {
-    data = new google.visualization.arrayToDataTable([
+    data = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
       ['Exterieur', 0], // Valeur initiale à 0 ou à un autre nombre par défaut
       ['Interieur', 0],
@@ -36,7 +36,7 @@
       min: -10
     };
 
-    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+    var chart = google.visualization.Gauge(document.getElementById('chart_div'));
     chart.draw(data, options);
     loadData(); // Chargez les données avant de dessiner les graphiques
     // Load new data every 20 seconds
