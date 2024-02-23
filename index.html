@@ -39,8 +39,8 @@
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
     chart.draw(data, options);
     loadData(); // Chargez les données avant de dessiner les graphiques
-    // Load new data every 15 seconds
-    setInterval(loadData, 15000);
+    // Load new data every 20 seconds
+    setInterval(loadData, 20000);
   }
 
   // Load the data from ThingSpeak
