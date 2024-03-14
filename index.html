@@ -40,6 +40,7 @@
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
     
     loadData(); // Chargez les données avant de dessiner les graphiques
+    displayData(label, point, options);
     chart.draw(data, options);
     // Load new data every 20 seconds
     setInterval(loadData, 20000);
